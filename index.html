@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<meta name="ad.size" content="width=1200,height=600">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<script type="text/javascript">
+	var parsed = (document.location.href.split('#')[1]||'').split('&');
+	var params = parsed.reduce(function (params, param) {
+	var param = param.split('=');
+	params[param[0]] = decodeURIComponent(param.slice(1).join('='));
+		return params;
+	}, {});
+
+	clickTag=params.clickTag;
+</script>
+
+<script type="text/javascript">
+
+	//dodanie wykonania funkcji zamykającej kreację po kliknięciu
+	//w element o id="closeButton"
+	document.getElementById('closeButton').addEventListener('click', function() {
+		window.parent.postMessage(params.onCrossClick, '*');
+	});
+
+</script>
+
+
+<style type="text/css">
+	html, body {
+	  margin: 0px;
+	  padding: 0px;
+	}
+ </style> 
+
+<div class="container">
+	<img class="blink" src="img/blink.png" alt="">
+	
+	<div id="closeButton"></div>
+	<img class="head" src="img/head.png" alt="">
+	
+	<div class="slider-group">
+
+		<div id="slide_1" class="slider">
+			<nav>
+				<div class="top"><img src="img/arr_top.png" alt=""></div>
+				<div class="bottom"><img src="img/arr_bottom.png" alt=""></div>
+			</nav>
+
+			<div class="image">
+				<img src="img/left-1.jpg" alt="">
+				<img src="img/left-2.jpg" alt="">
+				<img src="img/left-final.jpg" alt="">
+			</div>
+		</div>
+
+
+		<div id="slide_2" class="slider">
+			<nav>
+				<div class="top"><img src="img/arr_top.png" alt=""></div>
+				<div class="bottom"><img src="img/arr_bottom.png" alt=""></div>
+			</nav>
+
+			<div class="image">
+				<img src="img/center-1.jpg" alt="">
+				<img src="img/center-2.jpg" alt="">
+				<img src="img/center-final.jpg" alt="">
+			</div>
+		</div>
+
+
+		<div id="slide_3" class="slider">
+			<nav>
+				<div class="top"><img src="img/arr_top.png" alt=""></div>
+				<div class="bottom"><img src="img/arr_bottom.png" alt=""></div>
+			</nav>
+
+			<div class="image">
+				<img src="img/right-1.jpg" alt="">
+				<img src="img/right-2.jpg" alt="">
+				<img src="img/right-final.jpg" alt="">
+			</div>
+		</div>
+
+		
+	</div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="main.js"></script>
+
+<img src="http://delivery.way2traffic.com/campaign=20457/view/195264/count.gif?pb=12962&pc=588834&rd=TIMESTAMP">
+
+
+</body>
+</html>
